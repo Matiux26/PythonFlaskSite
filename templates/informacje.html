@@ -1,0 +1,14 @@
+{%extends "baza.html"%}
+	{%block content%}
+	{%for post in posty%}
+	<div class="col-sm-9">	
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+      <h2>{{title}}</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by {{post.autor.username}}, Sep 27, 2015.</h5>
+      <h5><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h5><br>
+      <p>{{post.body}}</p>
+      <br><br>
+    </div>
+	{%endfor%}
+	{%endblock%}

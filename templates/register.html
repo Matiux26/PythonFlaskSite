@@ -1,0 +1,10 @@
+{%extends "baza.html"%}
+	{%block content%}
+<div class="starter-template">
+<form action="{{ url_for('register') }}" method="POST">
+  <input type="username" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Register">
+</form>
+</div>
+	{%endblock%}

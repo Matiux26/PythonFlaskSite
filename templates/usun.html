@@ -1,0 +1,20 @@
+{%extends "baza.html"%}
+	{%block content%}
+	 <div class="starter-template">
+ <h1>Album zdjęć</h1>
+       <h4><small>RECENT IMAGES</small></h4>
+	{%for rekord in rekordy%}
+	<div class="col-sm-9">	
+      <hr>
+      <h2>{{rekord["tytul"]}}</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by {{rekord["autor"]}}, {{rekord["data"]}}.</h5>
+      <h5><span class="label label-danger">{{rekord["label"]}}</span> <span class="label label-primary">{{rekord["label2"]}}</span></h5><br>
+      <img src="static/{{rekord['path']}}"></img>
+	  <form action="{{ url_for('usun') }}" method="post">
+    <button name="usun" value="{{rekord['rowid']}}" class="btn-danger" type="submit">Usuń</button>
+</form>
+      <br><br>
+    </div>
+	{%endfor%}
+ </div>
+	{%endblock%}
